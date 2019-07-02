@@ -1,4 +1,11 @@
 #!/bin/bash
+
+#https://github.com/asajaroff/dotfiles/blob/master/setup.sh
+
+# wget - unzip
+yum install wget unzip -y
+cd $HOME
+
 # zsh theming
 echo "General configurations"
 mkdir -p ~/Workspace/Logs ~/Workspace/minikube ~/Workspace/Scripts ~/Workspace/tmp ~/Workspace/Repos ~/Projects
