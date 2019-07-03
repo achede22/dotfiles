@@ -32,7 +32,12 @@ ln -sf ~/.dotfiles/vimrc ~/.vimrc
 echo "######################### Installing AWS cli"
 # curl -O https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py --user && 
 pip3 install awscli --upgrade --user
+pip3 --version
+echo "deberia ser ----> pip 19.0.3 + , pero es aceptable"
+
+source ~/.profile
 aws --version
+echo "deberia ser ----> aws-cli/1.16.192 +"
 
 echo "######################### aws-iam-authenticator"
 curl https://amazon-eks.s3-us-west-2.amazonaws.com/1.11.5/2018-12-06/bin/linux/amd64/aws-iam-authenticator -o aws-iam-authenticator
