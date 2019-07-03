@@ -7,8 +7,6 @@
 
 apt install python3 python3-pip unzip wget curl -y
 
-#eksctl
-
 echo ""######################### General configurations"
 mkdir -p ~/Workspace/Logs ~/Workspace/minikube ~/Workspace/Scripts ~/Workspace/Temp ~/Workspace/Repos
 
@@ -55,6 +53,10 @@ curl https://raw.githubusercontent.com/ahmetb/kubectx/master/kubens -o kubens
 chmod +x kube* 
 mv kube* $HOME/.local/bin/
  
+echo ""######################### eksctl"
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+sudo mv /tmp/eksctl /usr/local/bin
+
 echo ""######################### Terraform"
 curl https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_amd64.zip -o terraform.zip
 unzip terraform.zip
@@ -85,5 +87,5 @@ mv ./linux-amd64/helm $HOME/.local/bin/helm
 #get region
 # get cluster
 
-aws eks --region us-east-1 update-kubeconfig --name regulado-develop-eks
+# aws eks --region us-east-1 update-kubeconfig --name regulado-develop-eks
 
