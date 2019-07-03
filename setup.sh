@@ -7,7 +7,7 @@
 
 apt install python3 python3-pip unzip wget curl -y
 
-echo ""######################### General configurations"
+echo "######################### General configurations"
 mkdir -p ~/Workspace/Logs ~/Workspace/minikube ~/Workspace/Scripts ~/Workspace/Temp ~/Workspace/Repos
 
 echo "######################### Installing ZSH"
