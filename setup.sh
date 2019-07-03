@@ -56,6 +56,7 @@ mv kube* $HOME/.local/bin/
 echo ""######################### eksctl"
 curl --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 sudo mv /tmp/eksctl /usr/local/bin
+eksctl version
 
 echo ""######################### Terraform"
 curl https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_amd64.zip -o terraform.zip
