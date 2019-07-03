@@ -77,3 +77,13 @@ tar -xvf helm-v2.9.1-linux-amd64.tar.gz
 chmod +x ./linux-amd64/helm
 
 mv ./linux-amd64/helm $HOME/.local/bin/helm
+
+
+# aws configure  # AWS access keys
+# aws s3 ls      # test AWS configuration
+
+#get region
+# get cluster
+
+aws eks --region us-east-1 update-kubeconfig --name regulado-develop-eks
+
