@@ -30,7 +30,9 @@ ln -sf ~/.dotfiles/vimrc ~/.vimrc
 # Install SRE Tools
 
 echo "######################### Installing AWS cli"
-curl -O https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py --user && pip install awscli --upgrade --user
+# curl -O https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py --user && 
+pip3 install awscli --upgrade --user
+aws --version
 
 echo "######################### aws-iam-authenticator"
 curl https://amazon-eks.s3-us-west-2.amazonaws.com/1.11.5/2018-12-06/bin/linux/amd64/aws-iam-authenticator -o aws-iam-authenticator
