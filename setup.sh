@@ -20,7 +20,7 @@ wget http://raw.github.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet
 mv bullet-train.zsh-theme $ZSH_CUSTOM/themes
 
 # vim setup
-echo ""######################### Creating necesary directories for vim's swapfiles, backupfiles and undodir"
+echo "######################### Creating necesary directories for vim's swapfiles, backupfiles and undodir"
 mkdir -p $HOME/.vim/swapfiles $HOME/.vim/swapfiles $HOME/.vim/backupfiles $HOME/.vim/undodir $HOME/.local/bin
 echo "Generating symlink to vimrc"
 ln -sf ~/.dotfiles/vimrc ~/.vimrc
@@ -42,7 +42,7 @@ curl https://amazon-eks.s3-us-west-2.amazonaws.com/1.11.5/2018-12-06/bin/linux/a
 mv aws-iam-authenticator $HOME/.local/bin/aws-iam-authenticator
 chmod +x $HOME/.local/bin/aws-iam-authenticator
 
-echo ""######################### kubectl"
+echo "######################### kubectl"
 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
 chmod +x kubectl
 
@@ -53,14 +53,14 @@ curl https://raw.githubusercontent.com/ahmetb/kubectx/master/kubens -o kubens
 chmod +x kube* 
 mv kube* $HOME/.local/bin/
  
-echo ""######################### eksctl"
+echo "######################### eksctl"
 curl --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 sudo mv /tmp/eksctl /usr/local/bin
 # . <(eksctl completion bash)
 eksctl version
 
 
-echo ""######################### Terraform"
+echo "######################### Terraform"
 curl https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_amd64.zip -o terraform.zip
 unzip terraform.zip
 chmod +x terraform
