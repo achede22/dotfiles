@@ -59,6 +59,10 @@ sudo mv /tmp/eksctl /usr/local/bin
 # . <(eksctl completion bash)
 eksctl version
 
+echo "######################### KOPS --> kubectl for clusters"
+curl -LO https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
+chmod +x kops-linux-amd64
+sudo mv kops-linux-amd64 /usr/local/bin/kops
 
 echo "######################### Terraform"
 curl https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_amd64.zip -o terraform.zip
