@@ -4,8 +4,15 @@
 # from https://github.com/asajaroff/dotfiles/blob/master/setup.sh
 
 # UBUNTU "apt" or RedHat "yum"
-
 apt install python3 python3-pip unzip wget curl -y
+
+#CENTOS 7 no tiene Python 3 oficial ( ni pip )
+yum makecache
+yum install yum-utils
+yum install https://centos7.iuscommunity.org/ius-release.rpm
+yum makecache
+yum install unzip wget curl python36u python36u-pip ## Python 3.6 with pip
+
 
 echo "######################### General configurations"
 mkdir -p ~/Workspace/Logs ~/Workspace/minikube ~/Workspace/Scripts ~/Workspace/Temp ~/Workspace/Repos
