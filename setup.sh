@@ -15,7 +15,7 @@ yum install unzip wget curl python36u python36u-pip ## Python 3.6 with pip
 
 alias python3=$(which python3.6)
 alias pip3=$(which pip3.6)
-
+pip3 install --upgrade pip
 python3 -V
 pip3 -V
 
@@ -43,9 +43,9 @@ ln -sf ~/.dotfiles/vimrc ~/.vimrc
 echo "######################### Installing AWS cli"
 # curl -O https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py --user && 
 pip3 install awscli --upgrade --user
-pip3 --version
-echo "deberia ser ----> pip 19.0.3 + , pero es aceptable"
 
+# delicado
+# export PATH=~/.local/bin:$PATH
 source ~/.profile
 aws --version
 echo "deberia ser ----> aws-cli/1.16.192 +"
