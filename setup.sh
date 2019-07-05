@@ -11,7 +11,8 @@ yum makecache
 yum install yum-utils
 yum install https://centos7.iuscommunity.org/ius-release.rpm
 yum makecache
-yum install unzip wget curl python36u python36u-pip ## Python 3.6 with pip
+yum update -y
+yum install -y vim unzip wget curl python36u python36u-pip ## Python 3.6 with pip
 
 alias python3=$(which python3.6)
 alias pip3=$(which pip3.6)
