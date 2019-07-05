@@ -12,7 +12,9 @@ yum install yum-utils
 yum install https://centos7.iuscommunity.org/ius-release.rpm
 yum makecache
 yum install unzip wget curl python36u python36u-pip ## Python 3.6 with pip
-
+alias python3=$(which python3.6)
+python3 -V
+pip3 -V
 
 echo "######################### General configurations"
 mkdir -p ~/Workspace/Logs ~/Workspace/minikube ~/Workspace/Scripts ~/Workspace/Temp ~/Workspace/Repos
