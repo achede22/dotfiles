@@ -47,7 +47,10 @@ pip3 install awscli --upgrade --user
 
 # delicado
 # export PATH=~/.local/bin:$PATH
-source ~/.profile
+rsync -xvr /root/.local/bin/* /usr/bin/ 
+source ~/.profile #ubuntu
+source ~/.bash_profile #centos
+
 aws --version
 echo "deberia ser ----> aws-cli/1.16.192 +"
 
