@@ -10,16 +10,16 @@ apt install python3 python3-pip unzip wget curl -y
 ##################### CENTOS 7 no tiene Python 3 oficial ( ni pip )
 yum makecache
 yum update -y
-yum install yum-utils vim unzip wget curl python36u python36u-pip -y ## Python 3.6 with pip
+yum install yum-utils zsh vim unzip wget git curl python36u python36u-pip -y ## Python 3.6 with pip
 yum install https://centos7.iuscommunity.org/ius-release.rpm
 yum makecache
 
 
 alias python3=$(which python3.6)
 alias pip3=$(which pip3.6)
-pip3 install --upgrade pip
-python3 -V
-pip3 -V
+pip3.6 install --upgrade pip
+python3.6 -V
+pip3.6 -V
 
 ###########
 echo "######################### General configurations"
