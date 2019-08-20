@@ -10,7 +10,7 @@ apt install python3 python3-pip unzip wget curl -y
 ##################### CENTOS 7 no tiene Python 3 oficial ( ni pip )
 yum makecache
 yum update -y
-yum install yum-utils zsh vim unzip wget git curl python36u python36u-pip -y ## Python 3.6 with pip
+yum install yum-utils lvm2  device-mapper-persistent-data zsh vim unzip wget git curl python36u python36u-pip -y ## Python 3.6 with pip
 yum install https://centos7.iuscommunity.org/ius-release.rpm
 yum makecache
 
@@ -25,10 +25,17 @@ pip3.6 -V
 echo "######################### General configurations"
 mkdir -p ~/Workspace/Logs ~/Workspace/minikube ~/Workspace/Scripts ~/Workspace/Temp ~/Workspace/Repos
 
+echo "######################### Docker "
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum install docker-ce docker-ce-cli containerd.io -y
+systemctl enable docker
+systemctl start docker
+
 echo "######################### Installing ZSH"
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 echo "Generating symlinks for ~/.zshrc" 
 ln -sf ~/.dotfiles/zshrc ~/.zshrc
+source ~/.zshrc
 
 echo "#########################Installing Bullet train theme"
 wget http://raw.github.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet-train.zsh-theme
