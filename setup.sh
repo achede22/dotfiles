@@ -110,11 +110,14 @@ chmod +x ./linux-amd64/helm
 mv ./linux-amd64/helm /usr/bin/
 
 
-# aws configure  # AWS access keys
-# aws s3 ls      # test AWS configuration
+## aws configure  # AWS access keys
+## aws s3 ls      # test AWS configuration
 
 #get region
 # get cluster
 
-# aws eks --region us-east-1 update-kubeconfig --name regulado-develop-eks
+# aws eks --region us-east-1 update-kubeconfig --name regulada-develop_eks
+
+## Added new context arn:aws:eks:us-east-1:947293917990:cluster/regulada-develop_eks to /root/.kube/config
+
 
