@@ -52,10 +52,8 @@ ln -sf ~/.dotfiles/vimrc ~/.vimrc
 echo "######################### Installing AWS cli"
 # curl -O https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py --user && 
 pip3 install awscli --upgrade --user
+rsync -xvr /root/.local/bin/* /usr/bin/
 
-# delicado
-# export PATH=~/.local/bin:$PATH
-rsync -xvr /root/.local/bin/* /usr/bin/ 
 source ~/.profile #ubuntu
 source ~/.bash_profile #centos
 
