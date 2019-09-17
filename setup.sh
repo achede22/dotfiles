@@ -88,7 +88,7 @@ chmod +x kops-linux-amd64
 sudo mv kops-linux-amd64 /usr/bin/
 
 echo "######################### Terraform"
-curl https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_amd64.zip -o terraform.zip
+curl https://releases.hashicorp.com/terraform/0.12.7/terraform_0.12.7_linux_amd64.zip -o terraform.zip
 unzip terraform.zip
 chmod +x terraform
 mv terraform /usr/bin/
