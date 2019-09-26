@@ -1,7 +1,17 @@
 #!/bin/bash
 # zsh theming
 
-# from https://github.com/asajaroff/dotfiles/blob/master/setup.sh
+# from Saja , https://github.com/asajaroff/dotfiles/blob/master/setup.sh
+
+are_you_root(){
+    echo $(whoami) | grep root || echo "This must be executed as root" || exit 1
+}
+
+os_selector(){
+    apt-get -v    && echo "Debian Based Distro detected" && PM="apt-get"  #Package MAnager
+    yum --version && echo "RedHat Based Distro detected" && PM="yum" 
+}
+
 
 # UBUNTU "apt" or RedHat "yum"
 apt install python3 python3-pip unzip wget curl -y
@@ -50,7 +60,7 @@ ln -sf ~/.dotfiles/vimrc ~/.vimrc
 
 echo "######################### Installing AWS cli"
 # curl -O https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py --user && 
-pip3 install awscli --upgrade --user
+	pip3 install awscli --upgrade --user
 rsync -xvr /root/.local/bin/* /usr/bin/
 
 source ~/.profile #ubuntu
@@ -133,4 +143,7 @@ cat ~/.aws/credentials
 # export AWS_PROFILE=sandbox-devops
 
 
+############## START
 
+are_you_root
+os_selector
