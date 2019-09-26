@@ -170,6 +170,8 @@ echo " $grn Now mannualy configure AWS and kubectl login $end
         \$ aws configure  # with your AWS access keys
         \$ aws s3 ls      # just to test AWS credentials
         \$ aws eks --region [REGION] update-kubeconfig --name [CLUSTER]
+	
+	\$ aws eks --region us-east-1 update-kubeconfig --name regulada-develop_eks
             # Added new context arn:aws:eks:us-east-1:XXXXXXXXXXXXXXXX:cluster/regulada-develop_eks to /root/.kube/config
     "
 
