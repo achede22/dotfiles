@@ -13,13 +13,27 @@ cyn=$'\e[1;36m'
 end=$'\e[0m'
 
 are_you_root(){
-    echo $(whoami) | grep root || echo " $red This must be executed as root $end" || exit 1
+    if [[ $EUID -ne 0 ]]; then
+        echo "This script must be run as root" 
+        exit 1
+    fi
 }
 
-os_selector(){                                                          #Package Manager
-    apt-get -v    && echo "$grn Debian Based Distro detected $end" && OS="Debian" && PM="apt-get" && ubuntu_apps 
-    yum --version && echo "$grn RedHat Based Distro detected $end" && OS="Centos" && PM="yum"     && centos_apps
+os_selector(){     #Package Manager
+
+    if [[ -f /etc/debian_version   ]] ; then    ##### Debian Based
+        echo "$grn Debian Based Distro detected $end"
+        OS="Debian"
+        PM="apt-get"
+        ubuntu_apps
+    elif [[ -f /etc/redhat_release ]]; then     ##### RedHat Based
+        echo "$grn RedHat Based Distro detected $end"
+        OS="Centos"
+        PM="yum"    
+        centos_apps
+    fi
 }
+
 
 ubuntu_apps() {
     ##################### UBUNTU "apt" 
@@ -54,6 +68,10 @@ centos_apps() {
     python3.6 -V
     pip3.6 -V
 }
+
+
+f_INSTALL() {
+    
 
 ###########
 echo "$cyn ######################### General configurations $end"
@@ -147,13 +165,12 @@ echo "$cyn ######################### helm $end"
     mv ./linux-amd64/helm /usr/local/bin/
     helm version || echo "$red ERROR $end"
 
+}
 
-######################### START HERE
 
-are_you_root
-os_selector
-
-cat ~/.aws/credentials
+f_final(){
+    
+    cat ~/.aws/credentials
 #[regulado-develop]
 #aws_access_key_id = XXXXXXXXXXXXXXXXXX
 #aws_secret_access_key = XXXXXXXXXXXXXX
@@ -171,8 +188,16 @@ echo " $grn Now mannualy configure AWS and kubectl login $end
         \$ aws s3 ls      # just to test AWS credentials
         \$ aws eks --region [REGION] update-kubeconfig --name [CLUSTER]
 	
-	\$ aws eks --region us-east-1 update-kubeconfig --name regulada-develop_eks
+	    \$ aws eks --region us-east-1 update-kubeconfig --name regulada-develop_eks
             # Added new context arn:aws:eks:us-east-1:XXXXXXXXXXXXXXXX:cluster/regulada-develop_eks to /root/.kube/config
     "
+}
+######################### START HERE
+
+are_you_root
+os_selector
+
+f_INSTALL
+
 
 
