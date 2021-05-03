@@ -3,11 +3,11 @@
 #dotfiles/super_setup.sh
 #@achede22
 
-#### Pending
-# zsh config file
+
 # zsh theming
 # zsh alias 
-# move all to SNAP
+
+# Original from Saja , https://github.com/asajaroff/dotfiles/blob/master/setup.sh
 
 #Colors
 red=$'\e[1;31m'
@@ -253,4 +253,5 @@ are_you_root
 os_selector
 
 f_INSTALL
+
 
