@@ -166,7 +166,7 @@ echo "$cyn ######################### GCP gcloud $end"
     curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 
     # Update and Install SDK 
-    $PM update && sudo apt-get install google-cloud-sdk
+    $PM update && sudo apt-get install google-cloud-sdk -y
 
 
 
