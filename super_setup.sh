@@ -226,6 +226,15 @@ echo "$cyn ######################### helm $end"
 
  
     helm version || echo "$red ERROR $end"
+   
+echo "$cyn ######################### brew $end"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    
+    
+    echo "$cyn ######################### kubectx  $end" 
+    brew install kubectx
+    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/hernan.deleon/.profile
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 }
 
