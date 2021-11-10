@@ -77,14 +77,12 @@ centos_apps() {
     pip3.6 -V
 }
 
-# Oh my zsh! 
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 
 f_INSTALL() {
     
 
-###########
+################################################################################
+
 echo "$cyn ######################### General configurations $end"
 mkdir -p ~/Workspace/Logs ~/Workspace/minikube ~/Workspace/Scripts ~/Workspace/Temp ~/Workspace/Repos
 
@@ -231,6 +229,10 @@ echo "$cyn ######################### brew $end"
     brew install kubectx
     echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/hernan.deleon/.profile
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    
+
+# Oh my Zsh!
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 }
 
