@@ -3,12 +3,6 @@
 #dotfiles/super_setup.sh
 #@achede22
 
-
-# zsh theming
-# zsh alias 
-
-# Original from Saja , https://github.com/asajaroff/dotfiles/blob/master/setup.sh
-
 #Colors
 red=$'\e[1;31m'
 grn=$'\e[1;32m'
@@ -59,7 +53,6 @@ ubuntu_apps() {
     vim \
     git \
     curl \
-    zsh \
     apt-transport-https ca-certificates curl -y \
     gnupg software-properties-common \
     -y # no-interactive mode
@@ -72,7 +65,7 @@ centos_apps() {
 
     $PM makecache
     $PM update -y
-    $PM install yum-utils lvm2  snap device-mapper-persistent-data zsh vim unzip wget docker-ce git curl python36u python36u-pip -y ## Python 3.6 with pip
+    $PM install yum-utils lvm2  snap device-mapper-persistent-data vim unzip wget docker-ce git curl python36u python36u-pip -y ## Python 3.6 with pip
     $PM install https://centos7.iuscommunity.org/ius-release.rpm
   #  $PM install docker-ce docker-ce-cli containerd.io -y    # Docker
     $PM makecache
@@ -83,6 +76,9 @@ centos_apps() {
     python3.6 -V
     pip3.6 -V
 }
+
+# Oh my zsh! 
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 
 f_INSTALL() {
