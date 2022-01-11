@@ -194,7 +194,7 @@ echo "$cyn ######################### kubectl $end"
 echo "$cyn ######################### Terraform $end"
 # please check for the latest version
     # Install Dependencies
-    $PM update && sudo apt-get install -y gnupg software-properties-common curl
+    $PM update && sudo $PM install -y gnupg software-properties-common curl
 
     # Add the HashiCorp GPG key.
     curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
@@ -212,12 +212,18 @@ echo "$cyn ######################### helm $end"
     # SNAP verison 
     # https://github.com/snapcrafters/helm
     # sudo snap install helm --classic
-    curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
-    sudo apt-get install apt-transport-https --yes
-    echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
-    sudo apt-get update
-    sudo apt-get install helm
+    
+    #### UBUNTU
+    # curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
+    # sudo apt-get install apt-transport-https --yes
+    # echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+    # sudo apt-get update
+    # sudo apt-get install helm
 
+    #all
+    curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+    chmod 700 get_helm.sh
+    ./get_helm.sh
  
     helm version || echo "$red ERROR $end"
    
